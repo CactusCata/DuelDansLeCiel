@@ -48,7 +48,7 @@ def initWindows():
     cng.setIconApplicationPhoto("textures/symbols/icon_menu.png")
     cng.registerQuitHandler(closeWindowEvent)
     loadPictures()
-    soundManager.playSound("sounds/Dragonforce-FuryoftheStorm.wav")
+    soundManager.playSound("sounds/bethoveen_sonata.wav")
 
     while gameState != 2:
         gameTrajSelect()
@@ -76,7 +76,7 @@ def loadPictures():
     airPlanePlayer2Picture = cng.image(airPlanePlayer2Type.getPath(), airPlanePlayer2Type.getXDimension() // airPlaneScale, airPlanePlayer2Type.getYDimension() // airPlaneScale)
 
     bulletPicture = cng.image(bullet.picturePath, bullet.xDimensionsTexture, bullet.yDimensionsTexture)
-    
+
     debug.success("Picture", "Pictures loaded successfully")
 
 def gameBasicDraw():

@@ -8,7 +8,7 @@ import gameEvent
 import trajectoryType
 
 if __name__ == "__main__":
-    debug.setDebugMode(2)
+    debug.setDebugMode(1)
     if not calligraphy.isWork():
         debug.error("calligraphy", "Calligraphy not working.")
         debug.error("calligraphy", "Application stopped")

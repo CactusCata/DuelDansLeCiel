@@ -47,8 +47,8 @@ class EventPressKeySpace(event.Event):
 
     def func(self):
         if graphicsGame.player1.getAirPlane().canShoot() and graphicsGame.gameState == 1:
-            xBull = graphicsGame.player1.getX() + 50 * cos((graphicsGame.player1.getOrientation() * pi / 180) + pi / 2)
-            yBull = graphicsGame.player1.getY() + 50 * sin((graphicsGame.player1.getOrientation() * pi / 180) + pi / 2)
+            xBull = graphicsGame.player1.getX() + 81 * cos((graphicsGame.player1.getOrientation() * pi / 180) + pi / 2)
+            yBull = graphicsGame.player1.getY() + 81 * sin((graphicsGame.player1.getOrientation() * pi / 180) + pi / 2)
             bullet.Bullet(xBull, yBull, graphicsGame.player1.getOrientation())
             graphicsGame.player1.getAirPlane().shoot()
 
@@ -95,7 +95,7 @@ class EventPressKeyZero(event.Event):
 
     def func(self):
         if graphicsGame.player2.getAirPlane().canShoot() and graphicsGame.gameState == 1:
-            xBull = graphicsGame.player2.getX() + 50 * cos((graphicsGame.player2.getOrientation() * pi / 180) + pi / 2)
-            yBull = graphicsGame.player2.getY() + 50 * sin((graphicsGame.player2.getOrientation() * pi / 180) + pi / 2)
+            xBull = graphicsGame.player2.getX() + 81 * cos((graphicsGame.player2.getOrientation() * pi / 180) + pi / 2)
+            yBull = graphicsGame.player2.getY() + 81 * sin((graphicsGame.player2.getOrientation() * pi / 180) + pi / 2)
             bullet.Bullet(xBull, yBull, graphicsGame.player2.getOrientation())
             graphicsGame.player2.getAirPlane().shoot()
