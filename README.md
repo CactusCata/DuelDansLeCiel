@@ -12,3 +12,4 @@ Cette librairie a toute fois été modifié pour répondre plus amplement à mes
   - Python 3.9.x
   - install Pillow module (python -m pip pyglet)
   - install pyglet module (python -m pip Pillow)
+  - download the ambiant music (https://www.mediafire.com/file/bubosc4e4rowke9/bethoveen_sonata.wav/file) and place it in "sounds" folder
