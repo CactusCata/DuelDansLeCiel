@@ -11,3 +11,9 @@ The project proposal comes from Joseph Razik (http://razik.univ-tln.fr/duel-dans
   - download the ambiant music (https://www.mediafire.com/file/bubosc4e4rowke9/bethoveen_sonata.wav/file) and place it in "sounds" folder
 
 After theses installations, you need to run the "game.py" file with python3.9
+
+In the futur, some things will be added:
+
+  - correct trajecories
+  - homing missile
+  - congratulation to the winner
