@@ -17,3 +17,5 @@ In the futur, some things will be added:
   - correct trajecories
   - homing missile
   - congratulation to the winner
+  - introduce weather
+  - shoot with rdm degrees (increase with damage and change with airplane type and weather) 
