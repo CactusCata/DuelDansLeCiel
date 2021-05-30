@@ -22,6 +22,9 @@ def sendMessage(label, group, color, message):
         print(label + '[' + group.upper() + ']' + messagecolor.RESET_CHAR + color + ': ' + message + messagecolor.RESET_CHAR)
 
 def l(group, message):
+    """
+    log message
+    """
     sendMessage(infoLabel, group, infoColor, message)
 
 def lIf(group, message, condition):
@@ -29,6 +32,9 @@ def lIf(group, message, condition):
         l(group, message)
 
 def success(group, message):
+    """
+    success message
+    """
     sendMessage(successLabel, group, successColor, message)
 
 def successIf(group, message, condition):
@@ -36,6 +42,9 @@ def successIf(group, message, condition):
         success(group, message, condition)
 
 def warning(group, message):
+    """
+    warning message
+    """
     if debugMode == 2:
         sendMessage(warningLabel, group, warningColor, message)
 
@@ -44,6 +53,9 @@ def warningIf(group, message, condition):
         warning(group, message)
 
 def error(group, message):
+    """
+    error message
+    """
     sendMessage(errorLabel, group, errorColor, message)
 
 def errorIf(group, message, condition):

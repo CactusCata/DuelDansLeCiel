@@ -2,6 +2,9 @@ import airPlaneType
 from time import time
 
 class AirPlane:
+    """
+    Represent the airplane which is drawned on the windows
+    """
 
     def __init__(self, airPlaneType):
         self.airPlaneType = airPlaneType
@@ -34,6 +37,9 @@ class AirPlane:
         return self.ammo
 
     def shoot(self):
+        """
+        Update last time shoot and reduce ammo
+        """
         self.lastShootTimestamp = time()
         self.setAmmo(self.getAmmo() - 1)
 

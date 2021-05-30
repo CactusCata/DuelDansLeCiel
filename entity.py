@@ -1,6 +1,9 @@
 import debug
 
 class Entity():
+    """
+    Represent a bullet or an airplane
+    """
 
     def __init__(self, x, y, orientation):
         self.x = x
@@ -26,4 +29,4 @@ class Entity():
         return self.orientation
 
     def __str__(self):
-     return "x:" + str(self.x) + " y:" + str(self.y) + " angle:" + str(self.orientation) 
+     return "x:" + str(self.x) + " y:" + str(self.y) + " angle:" + str(self.orientation)

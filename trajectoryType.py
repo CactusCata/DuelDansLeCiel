@@ -3,11 +3,8 @@ import trajectory
 import gameEvent
 from math import sin, cos, tan, atan, pi
 
+# Represent the amount of drawning steps in a trajectoryType
 INTERVAL_COUNT = 100
-
-def getInterval(start, end, count):
-    pas = start - end / count
-    return getIntervalle(start, end, pas)
 
 class VirageDroite(trajectory.Trajectory):
     def __init__(self):
@@ -60,11 +57,15 @@ class GlissageGauche(trajectory.Trajectory):
         return -(x_abscisse * 64.2 + 100)
 
 def initTrajectories():
-        VirageDroite()
-        VirageGauche()
-        GlissageDroite()
-        GlissageGauche()
-        Ligne()
+    """
+    This initialization allows to register all differents
+    trajectoryType
+    """
+    VirageDroite()
+    VirageGauche()
+    GlissageDroite()
+    GlissageGauche()
+    Ligne()
 
 def intervalPositive(start, end, time):
     array = []

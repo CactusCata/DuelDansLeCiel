@@ -39,7 +39,7 @@ def initWindows():
     """
     Initialize Windows
     Select trajectories
-    Draw airplanes
+    Draw airplanes's trajectories
     """
     global player1, player2
     player1 = player.Player(airPlaneType.getAirPlanesTypes()[airPlanePlayer1Name], menuDimensions[0] * 0.2, menuDimensions[1] * 0.5, 270)
@@ -76,6 +76,7 @@ def loadPictures():
     airPlanePlayer2Picture = cng.image(airPlanePlayer2Type.getPath(), airPlanePlayer2Type.getXDimension() // airPlaneScale, airPlanePlayer2Type.getYDimension() // airPlaneScale)
 
     bulletPicture = cng.image(bullet.picturePath, bullet.xDimensionsTexture, bullet.yDimensionsTexture)
+    
     debug.success("Picture", "Pictures loaded successfully")
 
 def gameBasicDraw():

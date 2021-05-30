@@ -11,6 +11,9 @@ def loadCalligraphy(path, asName):
     pyglet.font.load(asName)
 
 def isWork():
+    """
+    Called at the beginning to stop the game if pyglet is not installed 
+    """
     try:
         pyglet
         return True

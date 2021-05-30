@@ -1,7 +1,9 @@
 import entity
 
+# All bullets allive are registered here
 bullets = []
 
+# bullet's picture dimension 
 xDimensionsTexture = 12
 yDimensionsTexture = 12
 picturePath = "textures/gameplay/bullet.png"
