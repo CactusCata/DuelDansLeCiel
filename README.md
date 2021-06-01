@@ -8,7 +8,7 @@ The project proposal comes from Joseph Razik (http://razik.univ-tln.fr/duel-dans
   - Python 3.9.x
   - install Pillow module (python -m pip pyglet)
   - install pyglet module (python -m pip Pillow)
-  - download the ambiant music (https://www.mediafire.com/file/bubosc4e4rowke9/bethoveen_sonata.wav/file) and place it in "sounds" folder
+  - download the ambiant music (https://www.mediafire.com/file/knl27x5hi5evgl2/sounds.rar/file ou https://www.transfernow.net/dl/20210601SZrKHBg0) and place it in "sounds" folder
 
 After theses installations, you need to run the "game.py" file with python3.9
 
