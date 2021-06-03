@@ -6,6 +6,7 @@ import menuEvent
 import graphicsGame
 import gameEvent
 import trajectoryType
+import player
 
 if __name__ == "__main__":
     debug.setDebugMode(1)
@@ -14,8 +15,11 @@ if __name__ == "__main__":
         debug.error("calligraphy", "Application stopped")
         exit()
 
-    calligraphy.loadCalligraphy('calligraphy/retro_gaming.ttf', 'retro gaming')
+    calligraphy.loadCalligraphy('calligraphy/retro_gaming.ttf', 'retro gaming', True)
     trajectoryType.initTrajectories()
+
+    player.Player(1)
+    player.Player(2)
 
     eventManager.registerSeveralsKeyPressEvents(menuEvent.EventPressKeyRight(), menuEvent.EventPressKeyLeft(), menuEvent.EventPressKeyReturn())
     graphicsMenu.initWindows()

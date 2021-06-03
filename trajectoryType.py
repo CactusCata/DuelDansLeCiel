@@ -8,7 +8,7 @@ INTERVAL_COUNT = 100
 
 class VirageDroite(trajectory.Trajectory):
     def __init__(self):
-        super().__init__(gameEvent.trajectoryList[0], intervalNegative(pi - 0.01, (2 * pi) / 3, INTERVAL_COUNT))
+        super().__init__(gameEvent.trajectoryNames[0], intervalNegative(pi - 0.01, (2 * pi) / 3, INTERVAL_COUNT))
 
     def walkX(self, x_abscisse):
         return 260 * cos(x_abscisse) + 260
@@ -18,7 +18,7 @@ class VirageDroite(trajectory.Trajectory):
 
 class VirageGauche(trajectory.Trajectory):
     def __init__(self):
-        super().__init__(gameEvent.trajectoryList[1], intervalPositive(0, pi / 3, INTERVAL_COUNT))
+        super().__init__(gameEvent.trajectoryNames[1], intervalPositive(0, pi / 3, INTERVAL_COUNT))
 
     def walkX(self, x_abscisse):
         return 260 * cos(x_abscisse) - 260
@@ -28,7 +28,7 @@ class VirageGauche(trajectory.Trajectory):
 
 class Ligne(trajectory.Trajectory):
     def __init__(self):
-        super().__init__(gameEvent.trajectoryList[2], intervalPositive(0, 1, INTERVAL_COUNT))
+        super().__init__(gameEvent.trajectoryNames[2], intervalPositive(0, 1, INTERVAL_COUNT))
 
     def walkX(self, x_abscisse):
         return x_abscisse
@@ -38,7 +38,7 @@ class Ligne(trajectory.Trajectory):
 
 class GlissageDroite(trajectory.Trajectory):
     def __init__(self):
-        super().__init__(gameEvent.trajectoryList[3], intervalPositive(tan(-1), tan(1), INTERVAL_COUNT))
+        super().__init__(gameEvent.trajectoryNames[3], intervalPositive(tan(-1), tan(1), INTERVAL_COUNT))
 
     def walkX(self, x_abscisse):
         return atan(x_abscisse) * 50 + 50
@@ -48,7 +48,7 @@ class GlissageDroite(trajectory.Trajectory):
 
 class GlissageGauche(trajectory.Trajectory):
     def __init__(self):
-        super().__init__(gameEvent.trajectoryList[4], intervalPositive(tan(-1), tan(1), INTERVAL_COUNT))
+        super().__init__(gameEvent.trajectoryNames[4], intervalPositive(tan(-1), tan(1), INTERVAL_COUNT))
 
     def walkX(self, x_abscisse):
         return atan(x_abscisse) * 50 + 50

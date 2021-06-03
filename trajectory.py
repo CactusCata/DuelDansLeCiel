@@ -1,6 +1,11 @@
 import debug
 
-trajectoryTypes = {}
+# key : trajectoryName (str)
+# value : Instance of Trajectory (object)
+trajectories = {}
+
+def getTrajectoryFromName(trajectoryName):
+    return trajectories[trajectoryName]
 
 class Trajectory:
     """
@@ -10,7 +15,7 @@ class Trajectory:
     def __init__(self, name, interval):
         self.name = name
         self.interval = interval
-        trajectoryTypes[name] = self
+        trajectories[name] = self
 
     def getName(self):
         return self.name

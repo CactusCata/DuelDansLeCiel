@@ -1,12 +1,14 @@
 import airPlaneType
 from time import time
+import entity
 
-class AirPlane:
+class AirPlane(entity.Entity):
     """
     Represent the airplane which is drawned on the windows
     """
 
-    def __init__(self, airPlaneType):
+    def __init__(self, x, y, orientation, airPlaneType):
+        super().__init__(x, y, orientation)
         self.airPlaneType = airPlaneType
         self.health = airPlaneType.getMaxHealth()
         self.lastShootTimestamp = 0
@@ -28,7 +30,7 @@ class AirPlane:
             self.__setHealth(self.getHealth() - damage)
 
     def refillAmmo(self):
-        self.ammo = self.airPlaneType.getMaxAmmo()
+        self.setAmmo(self.getAirPlaneType().getMaxAmmo())
 
     def setAmmo(self, ammo):
         self.ammo = ammo

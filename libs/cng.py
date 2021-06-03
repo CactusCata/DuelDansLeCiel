@@ -40,6 +40,8 @@
 module_image = True
 import sys
 import debug
+import calligraphy
+import libs.utils.screenProperties as screenProperties
 if sys.version_info >= (3,):
     from tkinter import *
     import tkinter # pour utiliser la fonction _flatten
@@ -407,11 +409,27 @@ def textFont(px, py, pch, fontName, fontSize):
     """affichage d'un texte pch a partir de la position (px, py) aligne a gauche
     retour de l'identificateur unique de l'objet cree
     """
+    if fontName == None:
+        fontName = calligraphy.DEFAULT_FONT
     # changement de repere
     if not __the_end:
-        py=__ha-py
+        py = __ha - py
         id = __canv.create_text(px, py, text=pch, fill=__ccol, anchor='sw', font = (fontName, fontSize))
         return id
+
+def textFontProportion(text, pxProportion, pyProportion, placementProportion, screenDimensions = (0, 0), fontName = None):
+    """
+    screenDimensions : a couple that represent (screenWidth, screenHeight)
+    Write text with fontSize that depend from proportion
+    proportion : between 0 and 1
+    """
+    if screenDimensions == (0, 0):
+        screenDimensions = (screenProperties.getScreenWidth(), screenProperties.getScreenHeight())
+    screenWidth = screenDimensions[0]
+    screenHeight = screenDimensions[1]
+    betterFontSizeWidth = calligraphy.getBetterFontSize(text, screenWidth, pxProportion)
+    textPxWidth = calligraphy.getTextSize(text, betterFontSizeWidth)[0]
+    textFont(placementProportion[0] * screenWidth - textPxWidth // 1.5, screenHeight * placementProportion[1], text, fontName, betterFontSizeWidth)
 
 ###############################################################
 # manipulation des objets graphiques
@@ -729,6 +747,7 @@ def image_rotate(pim, pid, pangle):
     cette transformation passe par PIL d'ou la necessite du parametre pim.
     Effet de bord : si l'image etait cachee, elle est a nouveau visible.
     """
+    cpim = [pim[0], pim[1]]
     if not __the_end:
         if pangle < 0:
             pangle += 360
@@ -740,7 +759,7 @@ def image_rotate(pim, pid, pangle):
         __canv.delete(pid)
         # nouvelle image en lieu et place de l'ancienne
         id = __canv.create_image(x, y, image=pim[1], anchor='center')
-        return id
+        return id, cpim
 
 ##### dilater ou reduire une image (sans deformation)
 def image_scale(pim, pid, pfacteur):

@@ -2,22 +2,40 @@ import airPlane
 import airPlaneType
 import trajectoryType
 import debug
-import entity
 
-class Player(entity.Entity):
+player1 = None
+player2 = None
+
+def getPlayer1():
+    return player1
+
+def getPlayer2():
+    return player2
+
+class Player:
     """
     A player represent an user, his class contains
     the airplane that he control and trajectories chosen
     """
 
-    def __init__(self, airPlaneType, x, y, orientation):
+    def __init__(self, playerNumber):
         """
         x, y : position in pixel in windows screen
         orientation: in degrees (0 to 360)
         """
-        super().__init__(x, y, orientation)
-        self.airPlane = airPlane.AirPlane(airPlaneType)
+        if playerNumber == 1:
+            global player1
+            player1 = self
+        elif playerNumber == 2:
+            global player2
+            player2 = self
+        else:
+            debug.error("instanciate player", "player number is not allowed (need to be 1 or 2)")
+            exit()
         self.trajectoryTypes = [None, None, None]
+
+    def associateAirPlane(self, x, y, orientation, airPlaneType):
+        self.airPlane = airPlane.AirPlane(x, y, orientation, airPlaneType)
 
     def getAirPlane(self):
         """
