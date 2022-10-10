@@ -1,0 +1,9 @@
+Player doesn't inherit Entity class
+AirPlane inherit Entity class
+
+Fix airPlane orientation startle
+
+
+faire les mêmes opérations logiques pour P1 et P2
+répartir correctement la partie logique/calcul et la partie rendue --> 
+		- plus propre + calcul plus propre des rafraichissements
